@@ -1,5 +1,4 @@
-import { usePokemonContext } from "@/app/context/PokemonContext";
-import { Pokemon } from "@/app/interfaces/pokemon.interface";
+import { Pokemon } from "@/interfaces/pokemon.interface";
 import Image from "next/image";
 import Link from "next/link";
 import { ReactElement } from "react";
@@ -10,8 +9,6 @@ interface PokemonCardProps {
 }
 
 export const PokemonCard = ({ pokemon }: PokemonCardProps): ReactElement => {
-  const { setPokemon } = usePokemonContext();
-
   return (
     <div className="card flex flex-col justify-between glass w-72 h-96 pt-2 shadow-normal hover:shadow-hover duration-200">
       <figure
@@ -53,10 +50,7 @@ export const PokemonCard = ({ pokemon }: PokemonCardProps): ReactElement => {
             <strong>Height</strong>: {pokemon.height} mts
           </p>
         </div>
-        <div
-          className="card-actions justify-center mt-2"
-          onClick={() => setPokemon(pokemon)}
-        >
+        <div className="card-actions justify-center mt-2">
           <Link href={`/pokemon/${pokemon.name}`}>
             <button className="btn btn-xs sm:btn-sm md:btn-md">
               See more...

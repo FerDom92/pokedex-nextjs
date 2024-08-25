@@ -1,8 +1,9 @@
 "use client";
 
-import { PokemonList } from "@/app/components/pokemon/PokemonList";
-import { Paginator } from "@/app/components/ui/Paginator";
-import { usePokemonContext } from "@/app/context/PokemonContext";
+import { PokemonFilters } from "@/components/pokemon/PokemonFilters";
+import { PokemonList } from "@/components/pokemon/PokemonList";
+import { Paginator } from "@/components/ui/Paginator";
+import { usePokemonContext } from "@/context/PokemonContext";
 
 const PokemonListPage = () => {
   const { currentPage, setCurrentPage, pokemons, isLoading, error } =
@@ -11,7 +12,8 @@ const PokemonListPage = () => {
   if (error) return <div>An error occurred</div>;
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto p-5">
+      <PokemonFilters />
       <PokemonList pokemons={pokemons} isLoading={isLoading} />
 
       <Paginator page={currentPage} setCurrentPage={setCurrentPage} />
