@@ -1,4 +1,5 @@
 import { pokemonAdapter } from '@/adapters/pokemonAdapter';
+import { getPokemonId } from '@/utils/getPokemonId';
 import axios, { AxiosInstance } from 'axios';
 import { isNil } from 'lodash';
 import { IPokeApiClient, PokemonResult } from '../interfaces/poke-api-client.interface';
@@ -10,7 +11,7 @@ class PokeApiClient implements IPokeApiClient {
   private static instance: PokeApiClient;
   private axiosInstance: AxiosInstance;
 
-  private constructor() {
+  public constructor() {
     this.axiosInstance = axios.create({
       baseURL: process.env.NEXT_PUBLIC_POKEAPI_BASE_URL,
     });
@@ -28,7 +29,7 @@ class PokeApiClient implements IPokeApiClient {
       const response = await this.axiosInstance.get<PokemonListResponse>(`/pokemon?offset=${offset}&limit=${limit}`);
 
       const pokemonPromises = response.data.results.map(async (pokemon) => {
-        const id = pokemon.url.split('/').at(-2);
+        const id = getPokemonId(pokemon)
         const result = await this.getPokemonDetails(`${id}`);
         return result.success ? result.data : null;
       });
