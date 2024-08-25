@@ -1,0 +1,1 @@
+export const getPokemonId = (value: { name: string, url: string }) => value.url.split('/').at(-2);
