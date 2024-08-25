@@ -1,5 +1,5 @@
-import { Divider } from "@/app/components/ui/Divider";
-import { Stat, StatProp } from "@/app/components/ui/Stat";
+import { Divider } from "@/components/ui/Divider";
+import { Stat, StatProp } from "@/components/ui/Stat";
 
 interface PokemonStatsProps {
   stats: StatProp[];

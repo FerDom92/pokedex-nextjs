@@ -16,8 +16,7 @@ interface PokemonContextType {
   currentPage: number;
   setCurrentPage: (page: number) => void;
   pokemons: Pokemon[];
-  pokemon: Pokemon;
-  setPokemon: (pokemon: Pokemon) => void;
+  setPokemons: (pokemon: Pokemon[]) => void;
   isLoading: boolean;
   error?: Error | null;
 }
@@ -27,7 +26,6 @@ const PokemonContext = createContext<PokemonContextType | undefined>(undefined);
 export const PokemonProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
-  const [pokemon, setPokemon] = useState<Pokemon>(pokemons[0]);
   const { data, isLoading, error } = usePokemons(currentPage);
 
   useEffect(() => {
@@ -44,8 +42,7 @@ export const PokemonProvider: FC<{ children: ReactNode }> = ({ children }) => {
         pokemons,
         isLoading,
         error,
-        pokemon,
-        setPokemon,
+        setPokemons,
       }}
     >
       {children}

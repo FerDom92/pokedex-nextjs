@@ -1,6 +1,6 @@
+import { ArrowRightIcon } from "@/components/ui/icons/ArrowRight";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRightIcon } from "./components/ui/icons/ArrowRight";
 
 export default function Home() {
   return (
@@ -19,7 +19,8 @@ export default function Home() {
         width={1000}
         height={200}
         className="mx-auto p-5"
-        style={{ filter: "drop-shadow(0 0 10px rgba(151, 151, 151, 0.6))" }}
+        style={{ filter: "drop-shadow(0 0 30px rgba(0, 0, 0, 1))" }}
+        priority
       />
 
       <div className="mx-auto mt-6">

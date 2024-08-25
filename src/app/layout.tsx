@@ -1,13 +1,13 @@
 "use client";
 
+import { ChangeTheme } from "@/components/ui/ChangeTheme";
+import "@/css/globals.css";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Rubik } from "next/font/google";
 import { ReactNode, useState } from "react";
-import { ChangeTheme } from "./components/ui/ChangeTheme";
-import { PokemonProvider } from "./context/PokemonContext";
-import "./css/globals.css";
-import { queryClient } from "./lib/tanstack-query";
+import { PokemonProvider } from "../context/PokemonContext";
+import { queryClient } from "../lib/tanstack-query";
 
 const rubik = Rubik({ subsets: ["latin"] });
 

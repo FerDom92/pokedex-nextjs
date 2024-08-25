@@ -1,4 +1,4 @@
-import { Pokemon } from "@/app/interfaces/pokemon.interface";
+import { Pokemon } from "@/interfaces/pokemon.interface";
 import Image from "next/image";
 import { Chip } from "../../ui/Chip";
 import { PokemonStats } from "../PokemonStats";
@@ -17,7 +17,7 @@ export const PokemonInfo = ({ pokemon }: PokemonInfoProps) => {
 
       <div>
         <h2 className="text-2xl uppercase text-center my-4">Characteristics</h2>
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-row gap-4 flex-wrap">
           <Chip name={`Experience - ${pokemon.experience}`} />
           <Chip name={`Weight - ${pokemon.weight} kgs`} />
           <Chip name={`Height - ${pokemon.height} mts`} />
