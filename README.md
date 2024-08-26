@@ -107,12 +107,17 @@ Para ejecutar este proyecto en tu entorno local a continuación se detallan los 
 git clone https://github.com/FerDom92/pokedex-nextjs.git
 ```
 
-2. Hacer build de la app:
+2. Instalar las dependencias:
+```sh
+npm i
+```
+
+3. Hacer build de la app:
 ```sh
 npm run build
 ```
 
-3. Iniciar el servidor
+4. Iniciar el servidor
 ```sh
 npm run start
 ```
