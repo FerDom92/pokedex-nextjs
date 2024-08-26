@@ -1,8 +1,12 @@
+"use client";
+
 import { ArrowRightIcon } from "@/components/ui/icons/ArrowRight";
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
+
   return (
     <div className="container flex flex-col justify-center mx-auto">
       <h1 className="text-3xl md:text-5xl lg:text-7xl text-center mt-10">
@@ -23,15 +27,14 @@ export default function Home() {
         priority
       />
 
-      <div className="mx-auto mt-6">
-        <Link href="/pokemon">
-          <button className="btn btn-neutral">
-            <div className="flex justify-center items-center uppercase">
-              Go to Pokemon List
-              <ArrowRightIcon className="ml-4" />
-            </div>
-          </button>
-        </Link>
+      <div className="mx-auto mt-10">
+        <button
+          className="btn btn-neutral flex flex-row"
+          onClick={() => router.push("/pokemon")}
+        >
+          Go to Pokemon List
+          <ArrowRightIcon className="ml-4" />
+        </button>
       </div>
     </div>
   );

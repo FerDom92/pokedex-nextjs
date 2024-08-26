@@ -1,6 +1,8 @@
+"use client";
+
 import { Pokemon } from "@/interfaces/pokemon.interface";
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { ReactElement } from "react";
 import { Divider } from "../../ui/Divider";
 
@@ -9,6 +11,8 @@ interface PokemonCardProps {
 }
 
 export const PokemonCard = ({ pokemon }: PokemonCardProps): ReactElement => {
+  const router = useRouter();
+
   return (
     <div className="card flex flex-col justify-between glass w-72 h-96 pt-2 shadow-normal hover:shadow-hover duration-200">
       <figure
@@ -35,7 +39,7 @@ export const PokemonCard = ({ pokemon }: PokemonCardProps): ReactElement => {
                 src={`/${type}.png`}
                 width={60}
                 height={100}
-                alt={pokemon.name}
+                alt={type}
                 className="mr-2 w-16"
               />
             </div>
@@ -43,19 +47,16 @@ export const PokemonCard = ({ pokemon }: PokemonCardProps): ReactElement => {
         </div>
         <Divider />
         <div>
-          <p>
-            <strong>Weight</strong>: {pokemon.weight} kgs
-          </p>
-          <p>
-            <strong>Height</strong>: {pokemon.height} mts
-          </p>
+          <p>Weight: {pokemon.weight} kgs</p>
+          <p>Height: {pokemon.height} mts</p>
         </div>
         <div className="card-actions justify-center mt-2">
-          <Link href={`/pokemon/${pokemon.name}`}>
-            <button className="btn btn-xs sm:btn-sm md:btn-md">
-              See more...
-            </button>
-          </Link>
+          <button
+            className="btn btn-xs sm:btn-sm md:btn-md"
+            onClick={() => router.push(`/pokemon/${pokemon.name}`)}
+          >
+            See more...
+          </button>
         </div>
       </div>
     </div>

@@ -1,6 +1,5 @@
-import { PokemonDetailResponse } from "../interfaces/pokemon-detail-response.interface";
-import { Pokemon } from "../interfaces/pokemon.interface";
-
+import { PokemonDetailResponse } from "@/interfaces/pokemon-detail-response.interface";
+import { Pokemon } from "@/interfaces/pokemon.interface";
 
 export const pokemonAdapter = (pokemon: PokemonDetailResponse): Pokemon => {
   const {
