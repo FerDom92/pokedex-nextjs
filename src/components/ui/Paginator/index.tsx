@@ -34,15 +34,19 @@ export const Paginator = ({ page, setCurrentPage }: PaginatorProps) => {
       >
         {page + 1}
       </button>
-      <button className="join-item btn" disabled>
-        ...
-      </button>
-      <button
-        className="join-item btn"
-        onClick={() => setCurrentPage(page + 5)}
-      >
-        {page + 5}
-      </button>
+      {page > 5 && (
+        <>
+          <button className="join-item btn" disabled>
+            ...
+          </button>
+          <button
+            className="join-item btn"
+            onClick={() => setCurrentPage(page + 5)}
+          >
+            {page + 5}
+          </button>
+        </>
+      )}
     </div>
   );
 };

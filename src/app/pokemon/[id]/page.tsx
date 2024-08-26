@@ -16,7 +16,7 @@ export default function PokemonDetails({ params }: { params: { id: string } }) {
   const pokemon = data?.data;
 
   const handleBackClick = () => {
-    router.replace("/pokemon");
+    router.push("/pokemon");
   };
 
   if (isLoading) return <Spinner />;

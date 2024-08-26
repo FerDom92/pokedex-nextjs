@@ -1,0 +1,1 @@
+export const POKEMON_API_BASE_URL = process.env.NEXT_PUBLIC_POKEAPI_BASE_URL
