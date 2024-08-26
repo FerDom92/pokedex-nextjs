@@ -2,7 +2,10 @@ import type { SVGProps } from "react";
 
 export function Spinner(props: SVGProps<SVGSVGElement>) {
   return (
-    <div className="flex flex-col items-center gap-5 absolute top-1/2 left-1/2">
+    <div
+      data-testid="spinner"
+      className="flex flex-col items-center gap-5 absolute top-1/2 left-1/2"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={96}

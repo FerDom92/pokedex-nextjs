@@ -3,6 +3,7 @@ import type { SVGProps } from "react";
 export function ArrowLeftIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
+      data-testid="arrow-left-icon"
       xmlns="http://www.w3.org/2000/svg"
       width={24}
       height={24}

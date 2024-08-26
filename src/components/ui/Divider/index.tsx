@@ -1,3 +1,3 @@
 export const Divider = () => {
-  return <div className="divider my-0"></div>;
+  return <div data-testid="divider" className="divider my-0"></div>;
 };

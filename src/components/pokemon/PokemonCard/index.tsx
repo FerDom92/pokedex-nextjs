@@ -14,7 +14,10 @@ export const PokemonCard = ({ pokemon }: PokemonCardProps): ReactElement => {
   const router = useRouter();
 
   return (
-    <div className="card flex flex-col justify-between glass w-72 h-96 pt-2 shadow-normal hover:shadow-hover duration-200">
+    <div
+      data-testid="pokemon-card"
+      className="card flex flex-col justify-between glass w-72 h-96 pt-2 shadow-normal hover:shadow-hover duration-200"
+    >
       <figure
         style={{ filter: "drop-shadow(5px 30px 12px rgba(0, 0, 0, 0.6))" }}
       >
