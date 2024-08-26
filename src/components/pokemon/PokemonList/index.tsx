@@ -22,7 +22,10 @@ export const PokemonList = ({ pokemons, isLoading }: PokemonListProps) => {
           </div>
         </>
       ) : (
-        <div className="flex flex-row w-full xl:w-3/4 flex-wrap justify-center items-center gap-5">
+        <div
+          data-testid="pokemon-list"
+          className="flex flex-row w-full xl:w-3/4 flex-wrap justify-center items-center gap-5"
+        >
           {pokemons?.map((pokemon) => (
             <PokemonCard key={pokemon.name} pokemon={pokemon} />
           ))}
