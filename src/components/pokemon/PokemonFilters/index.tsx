@@ -8,7 +8,7 @@ export const PokemonFilters = () => {
   const handleSearchPokemon = (e?: FormEvent) => {
     e?.preventDefault();
     if (searchQuery.trim()) {
-      router.replace(`/pokemon/${searchQuery.trim()}`);
+      router.push(`/pokemon/${searchQuery.trim()}`);
     }
   };
 

@@ -1,7 +1,7 @@
+import { PokemonStats } from "@/components/pokemon/PokemonStats";
+import { Chip } from "@/components/ui/Chip";
 import { Pokemon } from "@/interfaces/pokemon.interface";
 import Image from "next/image";
-import { Chip } from "../../ui/Chip";
-import { PokemonStats } from "../PokemonStats";
 
 interface PokemonInfoProps {
   pokemon: Pokemon;
@@ -33,7 +33,7 @@ export const PokemonInfo = ({ pokemon }: PokemonInfoProps) => {
               src={`/${type}.png`}
               width={60}
               height={100}
-              alt={pokemon.name}
+              alt={type}
               className="mr-2 w-16"
             />
           ))}

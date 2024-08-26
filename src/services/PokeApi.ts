@@ -1,4 +1,5 @@
 import { pokemonAdapter } from '@/adapters/pokemonAdapter';
+import { POKEMON_API_BASE_URL } from '@/constants';
 import { getPokemonId } from '@/utils/getPokemonId';
 import axios, { AxiosInstance } from 'axios';
 import { isNil } from 'lodash';
@@ -13,7 +14,7 @@ class PokeApiClient implements IPokeApiClient {
 
   public constructor() {
     this.axiosInstance = axios.create({
-      baseURL: process.env.NEXT_PUBLIC_POKEAPI_BASE_URL,
+      baseURL: POKEMON_API_BASE_URL,
     });
   }
 
