@@ -1,12 +1,10 @@
 # Pokedex - Next.Js
 
----
-
 ## Tabla de contenidos
 
 1. [Descripción del proyecto](#descripción)
-2. [Estructura](#estructura)
-3. [Tecnologías y prácticas de desarrollo](#estructura)
+2. [Estructura](#estructura-de-directorios)
+3. [Tecnologías y prácticas de desarrollo](#tecnologías-y-prácticas-de-desarrollo)
 4. [Instalación](#instalación)
 5. [Pruebas](#pruebas)
 6. [Autor](#autor)
@@ -26,27 +24,29 @@ __Características__
 ---
 ### Estructura de directorios
 
-📦 __src__
- ┣ 📂 __ __mocks__ __
- ┣ 📂 __ __tests__ __
- ┣ 📂 __adapters__
- ┣ 📂 __components__
- ┣ ┣ 📂 __ui__
- ┣ ┗ 📂 __pokemon__
- ┣ 📂 __constants__
- ┣ 📂 __context__
- ┣ 📂 __css__
- ┣ 📂 __hooks__
- ┣ 📂 __interfaces__
- ┣ 📂 __lib__
- ┣ 📂 __services__
- ┣ 📂 __utlis__
- ┣  📂 __app__
+```plaintext
+📦 src/
+ ┣ 📂 __mocks__
+ ┣ 📂 __tests__
+ ┣ 📂 adapters
+ ┣ 📂 components
+ ┣ ┣ 📂 ui
+ ┣ ┗ 📂 pokemon
+ ┣ 📂 constants
+ ┣ 📂 context
+ ┣ 📂 css
+ ┣ 📂 hooks
+ ┣ 📂 interfaces
+ ┣ 📂 lib
+ ┣ 📂 services
+ ┣ 📂 utlis
+ ┣ 📂 app
  ┃ ┣ 📜 page.tsx
  ┃ ┣ 📜 layout.tsx
  ┃ ┣ 📂 pokemon
  ┃ ┗ ┗ 📂 [id]
  ┗ ┗ ┗ ┗ 📜 page.tsx
+```
 
 - __mocks__: Contiene todos los datos necesarios para realizar las pruebas.
 
@@ -102,16 +102,25 @@ Si bien es una mala práctica subir las variables de entorno a un repositorio en
 Para ejecutar este proyecto en tu entorno local a continuación se detallan los pasos:
 
 1. Clonar el repositorio:
-`git clone https://github.com/FerDom92/pokedex-nextjs.git`
+
+```sh
+git clone https://github.com/FerDom92/pokedex-nextjs.git
+```
 
 2. Hacer build de la app:
-`npm run build`
+```sh
+npm run build
+```
 
 3. Iniciar el servidor
-`npm run start`
+```sh
+npm run start
+```
 
 (opcional): Si deseas iniciar el proyecto en modo de desarrollo tenes que ejecutar el comando:
-`npm run dev`
+```sh
+npm run dev
+```
 
 ---
 ### Pruebas
@@ -119,13 +128,19 @@ Para ejecutar este proyecto en tu entorno local a continuación se detallan los 
 Para ejecutar las pruebas debes ejecutar los siguientes comandos:
 
 - Ejecutar todas las pruebas:
-`npm run test`
+```sh
+npm run test
+```
 
 - Ejecutar el coverage de pruebas:
-`npm run test:coverage`
+```sh
+npm run test:coverage
+```
 
 - Hacer comprobación de sintaxis:
-`npm run lint`
+```sh
+npm run lint
+```
 ---
 ### Autor
 
