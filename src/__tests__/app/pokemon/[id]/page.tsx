@@ -10,12 +10,6 @@ jest.mock("next/navigation");
 
 describe.only("Pokemon Detail Page", () => {
   const mockUsePokemonDetails = usePokemonDetails as jest.Mock;
-  const mockUseRouter = useRouter as jest.Mock;
-  const mockReplace = jest.fn();
-
-  beforeEach(() => {
-    mockUseRouter.mockReturnValue({ push: mockReplace });
-  });
 
   it("should render spinner when its loading", () => {
     mockUsePokemonDetails.mockReturnValue({
@@ -37,11 +31,10 @@ describe.only("Pokemon Detail Page", () => {
     });
 
     render(<PokemonDetails params={{ id: "1" }} />);
+    const image = screen.getByAltText(mockPokemon.name) as HTMLImageElement;
 
     expect(screen.getByText("Back to List")).toBeInTheDocument();
     expect(screen.getByText(/bulbasaur/i)).toBeInTheDocument();
-
-    const image = screen.getByAltText(mockPokemon.name) as HTMLImageElement;
     expect(image.src).toBe(mockPokemon.image);
   });
 
@@ -58,6 +51,11 @@ describe.only("Pokemon Detail Page", () => {
   });
 
   it("should return back to the list when 'Back to List' button is clicked", () => {
+    const mockUseRouter = useRouter as jest.Mock;
+    const mockReplace = jest.fn();
+
+    mockUseRouter.mockReturnValue({ push: mockReplace });
+
     mockUsePokemonDetails.mockReturnValue({
       data: { data: mockPokemon },
       isLoading: false,
