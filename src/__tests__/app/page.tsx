@@ -43,6 +43,7 @@ describe("Home Page", () => {
     render(<HomePage />);
 
     const pokemonImage = screen.getByAltText(/Pokemons/i) as HTMLImageElement;
+
     expect(pokemonImage.src).toContain("pokemon-landing.png");
   });
 
@@ -51,11 +52,11 @@ describe("Home Page", () => {
     (useRouter as jest.Mock).mockReturnValue({ push: pushMock });
 
     render(<HomePage />);
-    const button = screen.getByRole("button", { name: /go to pokemon list/i });
-    expect(button).toBeInTheDocument();
 
+    const button = screen.getByRole("button", { name: /go to pokemon list/i });
     fireEvent.click(button);
 
+    expect(button).toBeInTheDocument();
     expect(pushMock).toHaveBeenCalledWith("/pokemon");
     expect(pushMock).toHaveBeenCalledTimes(1);
   });

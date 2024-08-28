@@ -7,7 +7,7 @@ jest.mock("next/navigation", () => ({
   useRouter: jest.fn(),
 }));
 
-describe("PokemonCard Component", () => {
+describe("<PokemonCard />", () => {
   it("should render correctly with given props", () => {
     render(<PokemonCard pokemon={mockPokemon} />);
 
